@@ -1,0 +1,25 @@
+{
+  "name": "showroom-event-analyzer-batch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoichi-dev/showroom-event-analyzer-batch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yoichi-dev/showroom-event-analyzer-batch/issues"
+  },
+  "homepage": "https://github.com/Yoichi-dev/showroom-event-analyzer-batch#readme",
+  "dependencies": {
+    "firebase-admin": "^9.4.2",
+    "jsdom": "^16.4.0",
+    "node-cron": "^2.0.3",
+    "then-request": "^6.0.2"
+  }
+}
