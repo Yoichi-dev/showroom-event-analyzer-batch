@@ -118,27 +118,27 @@ async function eventUpdate() {
                     "room_name": userProfileJson.room_name,
                     "room_url_key": userProfileJson.room_url_key,
                     "point": [
-                        {
-                            "follower_num": userProfileJson.follower_num,
-                            "rank": userEventJson.event.ranking.rank,
-                            "next_rank": userEventJson.event.ranking.next_rank,
-                            "point": userEventJson.event.ranking.point,
-                            "gap": userEventJson.event.ranking.gap,
-                            "create_at": analyze_time
-                        }
                     ]
                 }
                 for (let k = 0; k < addCount; k++) {
                     subJson.point.push({
                         "follower_num": userProfileJson.follower_num,
-                        "rank": userEventJson.event.ranking.rank,
-                        "next_rank": userEventJson.event.ranking.next_rank,
-                        "point": userEventJson.event.ranking.point,
+                        "rank": eventList[i].jsonData.data.length,
+                        "next_rank": eventList[i].jsonData.data.length - 1,
+                        "point": 0,
                         "gap": userEventJson.event.ranking.gap,
-                        "create_at": analyze_time
+                        "create_at": addTime[k]
                     })
                 }
-                baseJson.data.push(subJson)
+                subJson.point.push({
+                    "follower_num": userProfileJson.follower_num,
+                    "rank": userEventJson.event.ranking.rank,
+                    "next_rank": userEventJson.event.ranking.next_rank,
+                    "point": userEventJson.event.ranking.point,
+                    "gap": userEventJson.event.ranking.gap,
+                    "create_at": analyze_time
+                })
+                eventList[i].jsonData.data.push(subJson)
             }
 
         }
